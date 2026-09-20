@@ -1,4 +1,4 @@
-const content = await fetch("data/site-content.json?v=20260920e", { cache: "no-store" }).then((response) => {
+const content = await fetch("data/site-content.json?v=20260920f", { cache: "no-store" }).then((response) => {
   if (!response.ok) throw new Error("לא ניתן לטעון את תוכן האתר");
   return response.json();
 });
@@ -114,10 +114,15 @@ function renderPosts() {
     if (start >= 0) posts.push({ title: titles[i], copy: ps.slice(start + 1, end) });
   }
   main.innerHTML = `<h1 class="page-title">כמה מילים על...</h1><section class="posts">
-    ${posts.map((post, index) => `<article class="post">
-      <div class="post-media">${content.posts.images[index] ? `<img src="${content.posts.images[index].src}" alt="${escapeHtml(content.posts.images[index].alt || post.title)}" loading="lazy">` : ""}</div>
+    ${posts.map((post, index) => {
+      const image = index === 3
+        ? { src: "assets/junkyard-yad2-campaign.jpg", alt: "שילוט לקמפיין ג'אנק יארד של יד2" }
+        : content.posts.images[index];
+      return `<article class="post">
+      <div class="post-media">${image ? `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || post.title)}" loading="lazy">` : ""}</div>
       <div class="post-copy"><span class="post-number">${String(index + 1).padStart(2, "0")}</span><h2>${escapeHtml(post.title)}</h2>${post.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
-    </article>`).join("")}
+    </article>`;
+    }).join("")}
   </section>`;
 }
 
