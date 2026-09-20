@@ -121,6 +121,7 @@ function renderContact() {
       <input type="hidden" name="_subject" value="פנייה חדשה מאתר אבירם שגב">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_url" value="https://avirambo54.github.io/contact.html">
       <button type="submit">שליחה</button>
       <p class="form-status" role="status" aria-live="polite"></p>
     </form>
