@@ -1,0 +1,180 @@
+media:
+  input: assets
+  output: /assets
+  rename: safe
+  categories: [image]
+
+components:
+  gallery_item:
+    type: object
+    fields:
+      - name: src
+        label: תמונה
+        type: image
+        required: true
+      - name: alt
+        label: תיאור התמונה
+        type: string
+        description: תיאור קצר לנגישות ולמנועי חיפוש
+
+content:
+  - name: site_content
+    label: תוכן האתר
+    type: file
+    path: data/site-content.json
+    format: json
+    fields:
+      - name: brand
+        label: לוגו וכותרת עליונה
+        type: object
+        fields:
+          - name: portraitLogo
+            label: איור פנים
+            type: image
+          - name: wordmark
+            label: לוגו טקסטואלי
+            type: image
+
+      - name: contact
+        label: פרטי קשר
+        type: object
+        fields:
+          - name: phone
+            label: טלפון
+            type: string
+            required: true
+          - name: email
+            label: אימייל
+            type: string
+            required: true
+
+      - name: home
+        label: דף הבית
+        type: object
+        fields:
+          - name: hero
+            label: תמונת שער
+            component: gallery_item
+          - name: title
+            label: כותרת
+            type: string
+          - name: caption
+            label: טקסט תחתון
+            type: string
+
+      - name: about
+        label: אודות
+        type: object
+        fields:
+          - name: text
+            label: טקסט אודות
+            type: text
+          - name: images
+            label: תמונות אודות
+            component: gallery_item
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+
+      - name: portfolio
+        label: תיק עבודות
+        type: object
+        fields:
+          - name: images
+            label: עבודות
+            component: gallery_item
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+
+      - name: ai
+        label: AI Generated
+        type: object
+        fields:
+          - name: images
+            label: תמונות AI
+            component: gallery_item
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+
+      - name: logos
+        label: לוגואים
+        type: object
+        fields:
+          - name: images
+            label: לוגואים
+            component: gallery_item
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+
+      - name: clients
+        label: לקוחות
+        type: object
+        fields:
+          - name: images
+            label: לוגואים של לקוחות
+            component: gallery_item
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+
+      - name: videos
+        label: סרטונים
+        type: object
+        fields:
+          - name: text
+            label: טקסט הסרטונים
+            type: text
+          - name: images
+            label: תמונות מקדימות
+            component: gallery_item
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+
+      - name: specials
+        label: מיוחדים
+        type: object
+        fields:
+          - name: text
+            label: טקסט
+            type: text
+          - name: images
+            label: תמונות
+            component: gallery_item
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+
+      - name: posts
+        label: כמה מילים על
+        type: object
+        fields:
+          - name: text
+            label: תוכן המאמרים
+            type: text
+          - name: images
+            label: תמונות למאמרים
+            component: gallery_item
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+
+settings:
+  content:
+    merge: direct
+  commit:
+    templates:
+      update: "עדכון תוכן האתר דרך Pages CMS"
+      create: "הוספת תוכן לאתר דרך Pages CMS"
+

@@ -1,0 +1,338 @@
+{
+  "brand": {
+    "portraitLogo": "assets/7b1559_790073acb35a404282033ce1ca34e377~mv2.jpg",
+    "wordmark": "assets/7b1559_778701ab0ac54b65b794120f6ba3938c~mv2.jpg"
+  },
+  "contact": {
+    "phone": "054-8300575",
+    "email": "aviram.segev@gmail.com"
+  },
+  "home": {
+    "hero": {
+      "alt": "artwork (10).png",
+      "src": "assets/7b1559_1d631a0abd2645d3895b1ce4d132876b~mv2.png"
+    },
+    "title": "Hello.",
+    "caption": "the visual were created using Leonardo.ai software by Aviram Segav"
+  },
+  "about": {
+    "text": "שלום, שמי אבירם שגב.\nמעצב גרפי​ בעל ידע נרחב בעיבוד תמונה וקדם דפוס.\nבעל ניסיון של מעל ל-20 שנה במשרדי הפירסום מהגדולים במשק.\nבמהלך שנות עבודתי צברתי ידע וניסיון רב בתחומי הביצוע והעיצוב\nלפלטפורמות השונות הן בתחום הפרינט והן בתחום הדיגיטל\nבשנת 2009 הקמתי סטודיו עצמאי המתמחה בתחומים הבאים:\nעיצוב לדפוס ולאינטרנט, לוגואים, מיתוג לעסקים, קטלוגים, אריזות, באנרים, סטנדים לתערוכות ועוד... הסטודיו עובד עם המגזר העסקי והפרטי\nבנוסף מספק גם שירותי פרילנס עיצוב וביצוע למשרדי פרסום.",
+    "images": [
+      {
+        "alt": "IMG_20230407_135904_edited_edited_edited",
+        "src": "assets/7b1559_7576fb3dcf1149eb98ef47b9af9f0dc9~mv2.jpg"
+      },
+      {
+        "alt": "A cup with colored pencils and brushes n",
+        "src": "assets/7b1559_1b009ba9ab054514a536a7f733bcaee6~mv2.jpg"
+      }
+    ]
+  },
+  "portfolio": {
+    "images": [
+      {
+        "alt": "מודעה למדד המותגים",
+        "src": "assets/7b1559_0fb59c646d084e9dbdfaf68bd534ccb0~mv2.jpg"
+      },
+      {
+        "alt": "מודעה למדד המותגים",
+        "src": "assets/7b1559_ca964deab9f54d488254bbc0d57e2062~mv2.jpg"
+      },
+      {
+        "alt": "מודעה למדד המותגים",
+        "src": "assets/7b1559_e24dd1c6b3084fc6b5a1d2b088568b30~mv2.jpg"
+      },
+      {
+        "alt": "מודעה לקפה ג׳ו",
+        "src": "assets/7b1559_cc4c7bff81ab4d729266e3656733aac2~mv2.jpg"
+      },
+      {
+        "alt": "לנדרובר - מודעה לדג הזהב",
+        "src": "assets/7b1559_23d10cc502b64f4ba8cfdb988eab8ad2~mv2.jpg"
+      },
+      {
+        "alt": "קלוקוט - מודעה לדג הזהב",
+        "src": "assets/7b1559_190f57c1e7e34e118d6b8d92b2923cac~mv2.jpg"
+      },
+      {
+        "alt": "הדרין מודעת כינים לדג הזהב",
+        "src": "assets/7b1559_5dece31c197b44359316049f44699a88~mv2.jpg"
+      },
+      {
+        "alt": "שילוט על מסלול מריצים עבור אירוע של לקוחות לובינסקי",
+        "src": "assets/7b1559_8d2f898f6ab241b7ad707d5f8ed72031~mv2.jpg"
+      },
+      {
+        "alt": "עיצוב תעודת הכשרה לנהיגה על מסלול מרוצים",
+        "src": "assets/7b1559_11ecf0cb8ea048f2b3bec8009a6c0271~mv2.jpg"
+      },
+      {
+        "alt": "תמונת קונספט לאפריקה טווין",
+        "src": "assets/7b1559_b9940b158c984818954c8c8c7f5770bd~mv2.jpg"
+      },
+      {
+        "alt": "שרון שגב -כרטיס ביקור",
+        "src": "assets/7b1559_016fa85f6ce94dc8ae0d7ff595261369.jpg"
+      },
+      {
+        "alt": "רול אפ",
+        "src": "assets/7b1559_8027d911cd41422e8e1d2ce3534d2d94.jpg"
+      },
+      {
+        "alt": "אריזת מגבונים",
+        "src": "assets/7b1559_b8f0bd8cf28c36dc59dab9384a381cb8.jpg"
+      },
+      {
+        "alt": "נייר מכתבים כרטיס ביקור ומעטפה",
+        "src": "assets/7b1559_7b746aff56f04e999fa3a7b48d44a1fe.jpg"
+      },
+      {
+        "alt": "מכתב במייל",
+        "src": "assets/7b1559_47c6062f3039ebcd63c9f487269f1794.jpg"
+      },
+      {
+        "alt": "מודעה במייל",
+        "src": "assets/7b1559_a56906cc1bf97d6eddd73971aea87918.jpg"
+      },
+      {
+        "alt": "הזמנה למייל ",
+        "src": "assets/7b1559_1832c05e634495cbf6a4979a296e97ba.jpg"
+      },
+      {
+        "alt": "leumi.jpg",
+        "src": "assets/7b1559_e4d33eca40ddf086cbaa338f79415163.jpg"
+      },
+      {
+        "alt": "דיוור ישיר",
+        "src": "assets/7b1559_0804e0796b8e371371705ddb45c596aa.jpg"
+      },
+      {
+        "alt": "עיצוב מדבקות לרכב",
+        "src": "assets/7b1559_bdc8cd7ead284c8024360b8eb6946bb2.png"
+      }
+    ]
+  },
+  "ai": {
+    "images": [
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_1c784321aea94e6083e044e5dd1a2129~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_1014b7f9142b4ae8b80127f9d09a3a13~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_c1eabdf603a14cb4b29c683ba4844b09~mv2-recovered.png"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_420958d9fecc4d318c1a8ce0512a9131~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_8567b6166ce44c388dca73be4ed59ae6~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_f70ac4561ea543d1a2c41f9883921270~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_96e6e05171204fa3a532d361c7cb6018~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_24b6edef76a24527af94e23b6c459335~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_d6b05687ad994d9ea5dc3c3ac0810d38~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_14eef9a8cb7c4e5d97e9f35e5b6855a7~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_ab61b8f6b21a4478b03b904549d9d92b~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_004555a25b2a4582912f41bc3fb73716~mv2.jpg"
+      }
+    ]
+  },
+  "logos": {
+    "images": [
+      {
+        "alt": "logo_konenot_Page_1",
+        "src": "assets/7b1559_864c383b29904c2783ab315ab5588d03~mv2.jpg"
+      },
+      {
+        "alt": "logo2",
+        "src": "assets/7b1559_df0c188d2df1431fa4d3ebe5e87f2920~mv2.jpg"
+      },
+      {
+        "alt": "Screen Shot 2024-02-25 at 12.10.02",
+        "src": "assets/7b1559_3e9a657d56074509a209608fd7cc8191~mv2.png"
+      },
+      {
+        "alt": "sharon.png",
+        "src": "assets/7b1559_eb56c51905234ca0a394e6b2f65445e4.png"
+      },
+      {
+        "alt": "logo4sir.jpg",
+        "src": "assets/7b1559_b8654d0a8a4f4d35a886b4f28784ad48.jpg"
+      },
+      {
+        "alt": "a4_zarka.jpg",
+        "src": "assets/7b1559_9d0fa5546f9046338fef128c72a960c0.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_ed5eb2b6fef51185892df128bd7c5412.jpg"
+      },
+      {
+        "alt": "logo_dtd_conver.jpg",
+        "src": "assets/7b1559_f74f524ebf134a669d800e668f5324ad.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_0860dcfb87817ac91dba938e1481e03b.jpg"
+      },
+      {
+        "alt": "star.jpg",
+        "src": "assets/7b1559_1c352747e239a9097925100b53325359.jpg"
+      },
+      {
+        "alt": "maya.jpg",
+        "src": "assets/7b1559_2e180e9ead5ef9480a2da5d54f0b095f.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_855d22770172a5addefd547812427e40.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_578a63bac99452ef308eda18982646d0.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_6f5a8695c2a5b6c978f80683a9b2f09a.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_98abb34010e77124722b4a5af58a4a31.jpg"
+      }
+    ]
+  },
+  "clients": {
+    "images": [
+      {
+        "alt": "btl_556948 logos_heb eng_7030X1874",
+        "src": "assets/7b1559_faa09e7583ae49f9b1c5c48652948bb2~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_21ea4b950b0645838c3d56cdfcfe1f2d.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_7491a6c0ffe8c3fbdd1db1e7e08b5b2b.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_6f5a8695c2a5b6c978f80683a9b2f09a.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_f59fbd433761009d92013df365e929c5.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_ce48e7696bde2a6404687b340dcfe117.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_2247ca8ce32bfe7c2fb6de823c5eeda7.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_761b241c28eca8ab8cc83d3b977d6ed0.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_60ee35cf330830d649c0f5dcb9502c93.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_1965a1be62e14d9f2434c4c875c4a1fb.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_1018de253f198eff9a9a079ec72189c3.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_881f22db2ec1ba117e8fb60937e9a3ae.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_ba02c0c9aaf38a8700a1b2fb4e5f2550.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_0f8de09d5a161ee5bc13c996f662c2d8.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_c86972ed487f960b8edc0c6e4295c036.jpg"
+      }
+    ]
+  },
+  "videos": {
+    "text": "VIM POWER FLYER\nPlay Video\nThis professional campaign titled 'Power flyer' was published in Israel in July, 2015. It was created for the brand: Vim, by ad agency: M&C Saatchi. This Direct medium campaign is related to the Recreation, Leisure industry and contains 1 media asset. It was submitted over 8 years ago.CreditsAdvertising Agency: M&C Saatchi, Tel-Aviv, Israel\nExecutive Creative Director / Partner: Tzur Golan\nArt director: Yam Sasson\nPhoto design and video editing: Aviram segev\nAccount Executives: Ben Hasdai, Limor Lamhoot Blomberg\ndoog\nPlay Video\n״Herzliya Loves Animals״ launched a unique signage campaign with the help of the advertising agency M&CSAATCHI. The campaign involved placing cutouts of various animals behind the iron structure of the Siron Interchange Bridge on the Coastal Highway.\nCredits:\nAdvertiser: Herzliya Loves Animals | Agency: M&CSAATCHI\nCEO: Alon Hochdorf | Creative Partner and Director: Tzur Golan\nClient Manager: Idit Zemer | Budget Manager: Rotem Fokrad\nArt: Yam Sasson | Photography and Editing: Aviram segev",
+    "images": [
+      {
+        "alt": "VIM POWER FLYER",
+        "src": "assets/7b1559_8e6695c0eef9428e86892ce49483b032f002.jpg"
+      },
+      {
+        "alt": "doog",
+        "src": "assets/7b1559_8151787a36694991a3963b67b336c078f002.jpg"
+      }
+    ]
+  },
+  "specials": {
+    "text": "Land Rover Defender,\nan automotive icon that has been renowned thanks to its off-road capabilities since 1948. To the disappointment of 4x4 drivers around the world, the Defender was discontinued on January 2016, just over two years ago. Having said that, the icon will return. Meanwhile, Land Rover Israel is determined to keep the brand, the icon and the legend alive within the minds of its loyal followers.\nPrint advertisement created by M&C Saatchi, Israel for Land Rover, within the category: Automotive.\nCaption\nTwo years without the defender\nCredits\nAdvertising Agency:\nM&C Saatchi, Tel Aviv, Israel\nCreative Director / Copywriter: Tzur Golan\nDesigner: Aviram Segev\nPrint advertisement created by M&C Saatchi, Israel for RB-DOORS, within the category: House, Garden.\nCredits\nAdvertising Agency: M&C Saatchi, Tel-Aviv, Israel\nChief Creative Director: Tzur Golan\nCreative Director: Hagai Shalev\nCopywriter: Alisa Mil\nGroup Account Director: Idit Zemmer\nAccount Maneger: Ori Krasner\nDesigner: Aviram Segev",
+    "images": [
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_e1d0919e76094a08ae9fefea7cd3f7b3~mv2.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_9b62019a2a834ef2ab2074d1521d5dd4~mv2.jpg"
+      },
+      {
+        "alt": "rb-doors.jpg",
+        "src": "assets/7b1559_f74bb1eae94f47429dfbf5b53dbfa5ce~mv2.jpg"
+      }
+    ]
+  },
+  "posts": {
+    "text": "יום הכולסטרול הלאומי.​\nעיצוב אלמנטים ושילוט עבור msd לרגל יום המודעות הישראלי הראשון לנזקי הכולסטרול הוקם בשדרות ממילא מיצג אינטראקטיבי ענק ויוצא דופן שהמחיש לעוברים ושבים כיצד נראה עורק חסום מבפנים. בנוסף יכלו המשתתפים לערוך בדיקת כולסטרול במקום, לקבל חומרי הסברה ולהתייעץ עם רופא.\nעיצוב לוגו עבור וולוו צ'אלנג\n​וולוו צ'אלנג' הוא פסטיבל אופניים בו השתתפו יותר מ-600 מתחרים.מדובר בתחרות אתגר עם אופי מרתוני עם מסלול ארוך וחווייתי.בדומה לטראנס אלפ צ'אלנג', תחרות השטח האירופאית הקשה בעולם, תחרות ה-Volvo Challenge היא תחרות בין זוגות. כל זוג צריך לרכוב ביחד את כל מסלול התחרות, לעבור ביחד בכל נקודות הביקורת הפזורות במסלול, ולחצות ביחד את קו הסיום.​\nאגנטק אירוע לקוחות\n​עיצוב שילוט והזמנות לאירוע לקוחות אגנטק. אגנטק מייצגת בישראל מגוון חברות מובילות בעולם,\nכגון: חברת Polar מפינלנד, המפתחת ומייצרת שעוני דופק וכושר אלחוטיים; חברת Omron מיפן למכשור רפואי ביתי, כגון: מדי לחץ דם, מדי חום, מדי צעדים ומכשירי אינהלציה; חברת Technogym מאיטליה, המפתחת ומייצרת מכשירי כושר למכוני כושר ולבית; חברת Tanita מיפן, למשקלים ביתיים ומקצועיים הכוללים מד אחוזי שומן וחברת Oakley, מותג משקפי השמש המוביל\nאתר ג'אנק יארד של יד 2​\nעיצוב שילוט רול אפ ופליירים לקידום אתר ג'אנק יארד מבית יד 2 .עיצוב דמות (brand character) בצורת גל ארכובה של רכב, במטרה להפוך את כל עניין חלקי הרכב לידידותי, נגיש ומזמין יותר לקהל הרחב.\nיעודו של האתר לרכז את כל המידע הקיים אודות חלקי חילוף לרכב בישראל. האתר מציג בצורה ברורה, קלה ומקיפה חלקי חילוף למגוון כלי הרכב: מכוניות, גי'פים, משאיות, אופנועים, קטנועים, מסחריות ועוד.\nעיצוב לוגו למועדון האופנועים סילבר ווינג\n​עיצוב לוגו עבור מועדון סילבר ווינג ישראל.חברת מאיר, יבואנית אופנועי וקטנועי הונדה, משקיעה בהידוק וחיזוק הקשר בין רוכבי המותג לחברה. למועדון הרוכבים הכללי של החברה הצטרפה קבוצה של בעלי קטנועי הסילבר ווינג על מנועיהם השונים. את השקת המועדון חגגו בטיול להרי ירושלים ורכיבה לאזור בר גיורא.",
+    "images": [
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_3ae6097266018afb5e1814f2af5264fb.jpg"
+      },
+      {
+        "alt": "עבודה של אבירם שגב",
+        "src": "assets/7b1559_2a39b7d719186ef476cab618c32b4462.png"
+      }
+    ]
+  }
+}
