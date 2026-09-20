@@ -42,21 +42,18 @@ button, input, textarea { font: inherit; }
 
 .brand {
   width: fit-content;
-  min-height: 148px;
   margin: 0 auto;
-  display: flex;
-  direction: rtl;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
+  display: block;
+  padding: 8px 0 18px;
   color: var(--ink);
   text-decoration: none;
 }
 
-.brand-portrait { width: 124px; height: 124px; object-fit: contain; }
-.brand-copy { display: grid; gap: 2px; text-align: right; line-height: 1; }
-.brand-copy strong { font-size: clamp(31px, 4.2vw, 48px); font-weight: 700; letter-spacing: -.8px; }
-.brand-copy span { font-size: clamp(20px, 2.5vw, 28px); font-weight: 300; letter-spacing: 4px; }
+.brand-logo {
+  width: min(620px, 92vw);
+  height: auto;
+  object-fit: contain;
+}
 
 .menu-button {
   display: none;
@@ -314,8 +311,7 @@ main {
 .lightbox-close { position: absolute; inset-block-start: 6px; inset-inline-end: 12px; border: 0; background: none; color: #fff; font-size: 30px; cursor: pointer; }
 
 @media (max-width: 850px) {
-  .brand { min-height: 122px; gap: 15px; }
-  .brand-portrait { width: 92px; height: 92px; }
+  .brand { padding-bottom: 12px; }
   .menu-button { display: block; }
   .main-nav { display: none; margin-top: 5px; padding: 7px; border: 1px solid var(--line); }
   .main-nav.is-open { display: grid; grid-template-columns: repeat(2, 1fr); }
@@ -335,10 +331,7 @@ main {
 
 @media (max-width: 460px) {
   .site-header { width: calc(100% - 20px); margin-top: 10px; }
-  .brand { gap: 8px; }
-  .brand-portrait { width: 76px; height: 76px; }
-  .brand-copy strong { font-size: 27px; }
-  .brand-copy span { font-size: 18px; letter-spacing: 3px; }
+  .brand-logo { width: min(430px, 96vw); }
   .home-copy h1 { font-size: 70px; letter-spacing: -3px; }
   .home-hero, .home-hero img { min-height: 470px; }
   .gallery { gap: 2px; padding: 0; }

@@ -51,8 +51,7 @@ function pageImages(page) {
 
 const content = {
   brand: {
-    portraitLogo: localize(source.home.images[0].src),
-    wordmark: localize(source.home.images[1].src),
+    logo: "assets/aviram-segev-logo.png",
   },
   contact: {
     phone: "054-8300575",

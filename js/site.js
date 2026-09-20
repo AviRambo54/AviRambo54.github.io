@@ -6,9 +6,7 @@ const content = await fetch("data/site-content.json").then((response) => {
 const page = document.body.dataset.page;
 const main = document.querySelector("main");
 
-document.querySelector('[data-brand="portrait"]').src = content.brand.portraitLogo;
-document.querySelector('[data-brand="name"]').textContent = content.brand.name;
-document.querySelector('[data-brand="tagline"]').textContent = content.brand.tagline;
+document.querySelector('[data-brand="logo"]').src = content.brand.logo;
 document.querySelector(`[data-nav="${page}"]`)?.setAttribute("aria-current", "page");
 
 const phoneLink = `tel:${content.contact.phone.replace(/-/g, "")}`;

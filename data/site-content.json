@@ -1,8 +1,6 @@
 {
   "brand": {
-    "portraitLogo": "assets/7b1559_790073acb35a404282033ce1ca34e377~mv2.jpg",
-    "name": "אבירם שגב",
-    "tagline": "מעצב"
+    "logo": "assets/aviram-segev-logo.png"
   },
   "contact": {
     "phone": "054-8300575",

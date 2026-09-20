@@ -43,15 +43,9 @@ content:
         label: לוגו וכותרת עליונה
         type: object
         fields:
-          - name: portraitLogo
-            label: איור פנים
+          - name: logo
+            label: לוגו עליון
             type: image
-          - name: name
-            label: שם
-            type: string
-          - name: tagline
-            label: שורת תיאור
-            type: string
 
       - name: contact
         label: פרטי קשר
