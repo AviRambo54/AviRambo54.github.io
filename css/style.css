@@ -50,7 +50,7 @@ button, input, textarea { font: inherit; }
 }
 
 .brand-logo {
-  width: min(620px, 92vw);
+  width: min(520px, 88vw);
   height: auto;
   object-fit: contain;
 }
@@ -331,7 +331,7 @@ main {
 
 @media (max-width: 460px) {
   .site-header { width: calc(100% - 20px); margin-top: 10px; }
-  .brand-logo { width: min(430px, 96vw); }
+  .brand-logo { width: min(360px, 90vw); }
   .home-copy h1 { font-size: 70px; letter-spacing: -3px; }
   .home-hero, .home-hero img { min-height: 470px; }
   .gallery { gap: 2px; padding: 0; }
