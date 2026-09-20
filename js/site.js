@@ -149,7 +149,9 @@ function renderContact() {
         headers: { Accept: "application/json" },
         body: new FormData(form),
       });
-      if (!response.ok) throw new Error("send failed");
+      const result = await response.json();
+      const accepted = result.success === true || result.success === "true";
+      if (!response.ok || !accepted) throw new Error(result.message || "send failed");
       form.reset();
       status.classList.add("is-success");
       status.textContent = "תודה, ההודעה נשלחה בהצלחה.";

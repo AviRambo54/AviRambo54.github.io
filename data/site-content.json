@@ -295,12 +295,12 @@
       {
         "alt": "VIM POWER FLYER",
         "src": "assets/7b1559_8e6695c0eef9428e86892ce49483b032f002.jpg",
-        "video": "https://video.wixstatic.com/video/7b1559_025cbd79511b40558742803cafa303f7/480p/mp4/file.mp4"
+        "video": "assets/videos/vim-power-flyer.mp4"
       },
       {
         "alt": "doog",
         "src": "assets/7b1559_8151787a36694991a3963b67b336c078f002.jpg",
-        "video": "https://video.wixstatic.com/video/7b1559_a81a47b887584d55bde2912bbb2aacbd/480p/mp4/file.mp4"
+        "video": "assets/videos/herzliya-loves-animals.mp4"
       }
     ]
   },

@@ -36,6 +36,11 @@ const sharedImageIds = [
   "7b1559_9121a27ad2fe4553bd3db7c55c31fa0b",
 ];
 
+const localVideos = [
+  "assets/videos/vim-power-flyer.mp4",
+  "assets/videos/herzliya-loves-animals.mp4",
+];
+
 function pageImages(page) {
   const seen = new Set();
   return (source[page]?.images || [])
@@ -68,7 +73,10 @@ const content = {
   clients: { images: pageImages("clients") },
   videos: {
     text: cleanText(source.videos.text),
-    images: pageImages("videos"),
+    images: pageImages("videos").map((image, index) => ({
+      ...image,
+      video: localVideos[index] || "",
+    })),
   },
   specials: {
     text: cleanText(source.specials.text),
