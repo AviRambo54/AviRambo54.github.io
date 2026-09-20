@@ -1,4 +1,4 @@
-const content = await fetch("data/site-content.json").then((response) => {
+const content = await fetch("data/site-content.json?v=20260920c", { cache: "no-store" }).then((response) => {
   if (!response.ok) throw new Error("לא ניתן לטעון את תוכן האתר");
   return response.json();
 });

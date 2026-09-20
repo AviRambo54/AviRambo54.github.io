@@ -25,8 +25,8 @@ function html(page, title) {
   <meta name="description" content="אבירם שגב — סטודיו לעיצוב גרפי, מיתוג, פרינט ודיגיטל.">
   <meta name="theme-color" content="#ffffff">
   <title>${title}</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="js/site.js"></script>
+  <link rel="stylesheet" href="css/style.css?v=20260920c">
+  <script type="module" src="js/site.js?v=20260920c"></script>
 </head>
 <body data-page="${page}">
   <a class="skip-link" href="#content">דילוג לתוכן</a>

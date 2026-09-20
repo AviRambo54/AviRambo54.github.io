@@ -51,7 +51,7 @@ function pageImages(page) {
 
 const content = {
   brand: {
-    logo: "assets/aviram-segev-logo.png",
+    logo: "assets/aviram-segev-logo.png?v=20260920c",
   },
   contact: {
     phone: "054-8300575",
