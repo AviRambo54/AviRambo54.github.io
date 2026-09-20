@@ -1,0 +1,29 @@
+name: Import website
+on:
+  push:
+    paths:
+      - "aviram-portfolio-github.zip"
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract website
+        run: |
+          if [ ! -f aviram-portfolio-github.zip ]; then
+            exit 0
+          fi
+          unzip -o aviram-portfolio-github.zip -d .
+          rm aviram-portfolio-github.zip
+      - name: Publish extracted files
+        run: |
+          if git diff --quiet && git diff --cached --quiet && [ -z "$(git status --porcelain)" ]; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish website files"
+          git push
