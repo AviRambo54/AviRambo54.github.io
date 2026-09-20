@@ -25,7 +25,7 @@ function html(page, title) {
   <meta name="description" content="אבירם שגב — סטודיו לעיצוב גרפי, מיתוג, פרינט ודיגיטל.">
   <meta name="theme-color" content="#ffffff">
   <title>${title}</title>
-  <link rel="stylesheet" href="css/style.css?v=20260920f">
+  <link rel="stylesheet" href="css/style.css?v=20260920g">
   <script type="module" src="js/site.js?v=20260920f"></script>
 </head>
 <body data-page="${page}">
