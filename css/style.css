@@ -236,6 +236,32 @@ main {
 .video-placeholder span { font-size: 46px; }
 .video-placeholder strong { font-size: 18px; font-weight: 400; }
 
+.specials-showcase {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px 24px 42px;
+}
+
+.special-project {
+  display: grid;
+  grid-template-columns: minmax(220px, .72fr) minmax(0, 1.75fr);
+  gap: clamp(28px, 4vw, 42px);
+  align-items: start;
+  padding: 28px 0 56px;
+  border-bottom: 1px solid var(--line);
+}
+
+.special-project + .special-project { padding-top: 56px; }
+.special-copy { direction: ltr; color: #111; font-size: 14px; line-height: 1.3; text-align: left; }
+.special-copy p { margin: 0 0 2px; }
+.special-copy .special-lead { margin-bottom: 9px; }
+.ads-world-logo { width: 112px; height: auto; margin: 0 0 10px; }
+.special-gallery { display: grid; gap: 8px; align-items: start; }
+.special-gallery-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.special-gallery-single { grid-template-columns: minmax(0, 322px); justify-content: end; }
+.special-artwork { margin: 0; overflow: hidden; border: 1px solid #d9d7d2; border-radius: 5px; background: #fff; box-shadow: 0 2px 7px rgba(0, 0, 0, .12); }
+.special-artwork img { width: 100%; height: auto; }
+
 .posts { max-width: 900px; margin: 0 auto; padding: 10px 24px 30px; }
 .post { display: grid; grid-template-columns: minmax(280px, .9fr) 1.1fr; gap: clamp(28px, 6vw, 64px); align-items: center; padding: 52px 0; border-bottom: 1px solid var(--line); }
 .post:nth-child(even) .post-media { grid-column: 2; grid-row: 1; }
@@ -329,6 +355,8 @@ main {
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery.clients { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
   .feature, .feature:nth-child(even) { grid-template-columns: 1fr; gap: 22px; direction: rtl; }
+  .special-project { grid-template-columns: 1fr; gap: 28px; }
+  .special-gallery-single { justify-content: center; }
   .post, .post:nth-child(even) { grid-template-columns: 1fr; gap: 28px; }
   .post:nth-child(even) .post-media, .post:nth-child(even) .post-copy { grid-column: auto; grid-row: auto; }
   .contact-layout { grid-template-columns: 1fr; gap: 35px; padding: 24px; }
@@ -341,6 +369,10 @@ main {
   .home-copy h1 { font-size: 70px; letter-spacing: -3px; }
   .home-hero, .home-hero img { min-height: 470px; }
   .gallery { gap: 2px; padding: 0; }
+  .specials-showcase { padding-inline: 16px; }
+  .special-project { padding-block: 22px 42px; }
+  .special-project + .special-project { padding-top: 42px; }
+  .special-copy { font-size: 13px; }
   .about { margin-inline: 10px; padding: 24px 20px; }
   .about-copy { font-size: 17px; line-height: 1.75; }
   .about-copy h1 { margin-bottom: 20px; }

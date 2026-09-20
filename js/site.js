@@ -1,4 +1,4 @@
-const content = await fetch("data/site-content.json?v=20260920d", { cache: "no-store" }).then((response) => {
+const content = await fetch("data/site-content.json?v=20260920e", { cache: "no-store" }).then((response) => {
   if (!response.ok) throw new Error("לא ניתן לטעון את תוכן האתר");
   return response.json();
 });
@@ -81,13 +81,26 @@ function renderVideos() {
 
 function renderSpecials() {
   const ps = paragraphs(content.specials.text);
-  const split = ps.findIndex((line, index) => index > 0 && line.startsWith("Print advertisement created") && ps.slice(0, index).some((x) => x.startsWith("Print advertisement created")));
-  const groups = split > 0 ? [ps.slice(0, split), ps.slice(split)] : [ps];
-  main.innerHTML = `<h1 class="page-title">מיוחדים</h1><section class="longform">
-    ${groups.map((group, index) => `<article class="feature">
-      <img class="feature-image" src="${content.specials.images[index]?.src || ""}" alt="${index ? "RB Doors" : "Land Rover Defender"}">
-      <div class="feature-copy"><h2>${index ? "RB Doors" : "Land Rover Defender"}</h2>${group.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
-    </article>`).join("")}
+  const rbStart = ps.findIndex((line) => line.includes("RB-DOORS"));
+  const landLines = rbStart > 0 ? ps.slice(0, rbStart) : ps;
+  const rbLines = rbStart > 0 ? ps.slice(rbStart) : [];
+  const landIntro = landLines.length > 1 ? [`${landLines[0]} ${landLines[1]}`, ...landLines.slice(2)] : landLines;
+  const copy = (lines) => lines.map((line, index) => `<p${index === 0 ? ' class="special-lead"' : ""}>${escapeHtml(line)}</p>`).join("");
+  const logo = '<img class="ads-world-logo" src="assets/ads-of-the-world-logo.png" alt="Ads of the World">';
+  const landAlts = ["קמפיין Land Rover Defender — אריה", "קמפיין Land Rover Defender — פיל"];
+  main.innerHTML = `<h1 class="page-title">מיוחדים</h1><section class="specials-showcase" dir="ltr">
+    <article class="special-project">
+      <div class="special-copy">${logo}${copy(landIntro)}</div>
+      <div class="special-gallery special-gallery-pair">
+        ${content.specials.images.slice(0, 2).map((image, index) => `<figure class="special-artwork"><img src="${escapeHtml(image.src)}" alt="${landAlts[index]}" loading="lazy"></figure>`).join("")}
+      </div>
+    </article>
+    <article class="special-project">
+      <div class="special-copy">${logo}${copy(rbLines)}</div>
+      <div class="special-gallery special-gallery-single">
+        <figure class="special-artwork"><img src="${escapeHtml(content.specials.images[2].src)}" alt="מודעת RB-Doors" loading="lazy"></figure>
+      </div>
+    </article>
   </section>`;
 }
 
