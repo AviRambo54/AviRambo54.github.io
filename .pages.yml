@@ -17,6 +17,21 @@ components:
         type: string
         description: תיאור קצר לנגישות ולמנועי חיפוש
 
+  video_item:
+    type: object
+    fields:
+      - name: src
+        label: תמונה מקדימה
+        type: image
+        required: true
+      - name: alt
+        label: שם הסרטון
+        type: string
+      - name: video
+        label: קובץ וידאו
+        type: string
+        description: נתיב לקובץ MP4 בתיקיית assets/videos
+
 content:
   - name: site_content
     label: תוכן האתר
@@ -31,9 +46,12 @@ content:
           - name: portraitLogo
             label: איור פנים
             type: image
-          - name: wordmark
-            label: לוגו טקסטואלי
-            type: image
+          - name: name
+            label: שם
+            type: string
+          - name: tagline
+            label: שורת תיאור
+            type: string
 
       - name: contact
         label: פרטי קשר
@@ -133,8 +151,8 @@ content:
             label: טקסט הסרטונים
             type: text
           - name: images
-            label: תמונות מקדימות
-            component: gallery_item
+            label: סרטונים ותמונות מקדימות
+            component: video_item
             list:
               collapsible:
                 collapsed: true
@@ -177,4 +195,3 @@ settings:
     templates:
       update: "עדכון תוכן האתר דרך Pages CMS"
       create: "הוספת תוכן לאתר דרך Pages CMS"
-

@@ -1,7 +1,8 @@
 {
   "brand": {
     "portraitLogo": "assets/7b1559_790073acb35a404282033ce1ca34e377~mv2.jpg",
-    "wordmark": "assets/7b1559_778701ab0ac54b65b794120f6ba3938c~mv2.jpg"
+    "name": "אבירם שגב",
+    "tagline": "מעצב"
   },
   "contact": {
     "phone": "054-8300575",
@@ -21,10 +22,6 @@
       {
         "alt": "IMG_20230407_135904_edited_edited_edited",
         "src": "assets/7b1559_7576fb3dcf1149eb98ef47b9af9f0dc9~mv2.jpg"
-      },
-      {
-        "alt": "A cup with colored pencils and brushes n",
-        "src": "assets/7b1559_1b009ba9ab054514a536a7f733bcaee6~mv2.jpg"
       }
     ]
   },
@@ -297,11 +294,13 @@
     "images": [
       {
         "alt": "VIM POWER FLYER",
-        "src": "assets/7b1559_8e6695c0eef9428e86892ce49483b032f002.jpg"
+        "src": "assets/7b1559_8e6695c0eef9428e86892ce49483b032f002.jpg",
+        "video": "https://video.wixstatic.com/video/7b1559_025cbd79511b40558742803cafa303f7/480p/mp4/file.mp4"
       },
       {
         "alt": "doog",
-        "src": "assets/7b1559_8151787a36694991a3963b67b336c078f002.jpg"
+        "src": "assets/7b1559_8151787a36694991a3963b67b336c078f002.jpg",
+        "video": "https://video.wixstatic.com/video/7b1559_a81a47b887584d55bde2912bbb2aacbd/480p/mp4/file.mp4"
       }
     ]
   },
@@ -332,6 +331,18 @@
       {
         "alt": "עבודה של אבירם שגב",
         "src": "assets/7b1559_2a39b7d719186ef476cab618c32b4462.png"
+      },
+      {
+        "alt": "אגנטק — אירוע לקוחות",
+        "src": "assets/agentek-event-cover.svg"
+      },
+      {
+        "alt": "אתר ג'אנק יארד של יד2",
+        "src": "assets/7b1559_ba02c0c9aaf38a8700a1b2fb4e5f2550.jpg"
+      },
+      {
+        "alt": "לוגו מועדון האופנועים סילבר ווינג",
+        "src": "assets/7b1559_98abb34010e77124722b4a5af58a4a31.jpg"
       }
     ]
   }

@@ -7,7 +7,8 @@ const page = document.body.dataset.page;
 const main = document.querySelector("main");
 
 document.querySelector('[data-brand="portrait"]').src = content.brand.portraitLogo;
-document.querySelector('[data-brand="wordmark"]').src = content.brand.wordmark;
+document.querySelector('[data-brand="name"]').textContent = content.brand.name;
+document.querySelector('[data-brand="tagline"]').textContent = content.brand.tagline;
 document.querySelector(`[data-nav="${page}"]`)?.setAttribute("aria-current", "page");
 
 const phoneLink = `tel:${content.contact.phone.replace(/-/g, "")}`;
@@ -52,8 +53,8 @@ function renderHome() {
 
 function renderAbout() {
   main.innerHTML = `<section class="about">
-    <div class="about-photos">${content.about.images.map((image) => `<img src="${image.src}" alt="${escapeHtml(image.alt)}">`).join("")}</div>
-    <div class="about-copy">${escapeHtml(content.about.text)}</div>
+    <div class="about-photo"><img src="${content.about.images[0].src}" alt="${escapeHtml(content.about.images[0].alt)}"></div>
+    <div class="about-copy"><span class="eyebrow">נעים להכיר</span><h1>אבירם שגב</h1>${paragraphs(content.about.text).map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
   </section>`;
 }
 
@@ -66,12 +67,15 @@ function renderVideos() {
   const first = text.indexOf("VIM POWER FLYER");
   const second = text.indexOf("doog");
   const cards = [
-    { title: "VIM POWER FLYER", image: content.videos.images[0], copy: text.slice(first + 1, second) },
-    { title: "Herzliya Loves Animals", image: content.videos.images[1], copy: text.slice(second + 1) },
+    { title: "VIM POWER FLYER", media: content.videos.images[0], copy: text.slice(first + 1, second) },
+    { title: "Herzliya Loves Animals", media: content.videos.images[1], copy: text.slice(second + 1) },
   ];
   main.innerHTML = `<h1 class="page-title">סרטונים</h1><section class="longform">
     ${cards.map((card) => `<article class="feature">
-      ${card.image?.src ? `<img class="feature-image" src="${card.image.src}" alt="${escapeHtml(card.title)}">` : `<div class="video-placeholder" aria-hidden="true"><span>▶</span><strong>${escapeHtml(card.title)}</strong></div>`}
+      <video class="feature-video" controls preload="metadata" poster="${escapeHtml(card.media.src)}">
+        <source src="${escapeHtml(card.media.video)}" type="video/mp4">
+        הדפדפן שלך אינו תומך בהפעלת וידאו.
+      </video>
       <div class="feature-copy"><h2>${escapeHtml(card.title)}</h2>${card.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
     </article>`).join("")}
   </section>`;
@@ -99,18 +103,26 @@ function renderPosts() {
     if (start >= 0) posts.push({ title: titles[i], copy: ps.slice(start + 1, end) });
   }
   main.innerHTML = `<h1 class="page-title">כמה מילים על...</h1><section class="posts">
-    ${posts.map((post, index) => `<article class="post"><h2>${escapeHtml(post.title)}</h2>${post.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}${content.posts.images[index] ? `<img src="${content.posts.images[index].src}" alt="${escapeHtml(post.title)}">` : ""}</article>`).join("")}
+    ${posts.map((post, index) => `<article class="post">
+      <div class="post-media">${content.posts.images[index] ? `<img src="${content.posts.images[index].src}" alt="${escapeHtml(content.posts.images[index].alt || post.title)}" loading="lazy">` : ""}</div>
+      <div class="post-copy"><span class="post-number">${String(index + 1).padStart(2, "0")}</span><h2>${escapeHtml(post.title)}</h2>${post.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
+    </article>`).join("")}
   </section>`;
 }
 
 function renderContact() {
   main.innerHTML = `<section class="contact-layout">
-    <form class="contact-form">
-      <label for="name">Name *</label><input id="name" name="name" required autocomplete="name">
-      <label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email">
-      <label for="subject">Subject</label><input id="subject" name="subject">
-      <label for="message">Message</label><textarea id="message" name="message"></textarea>
-      <button type="submit">Send</button>
+    <form class="contact-form" action="https://formsubmit.co/${content.contact.email}" method="POST" novalidate>
+      <label for="name">שם *</label><input id="name" name="name" required autocomplete="name">
+      <label for="email">אימייל *</label><input id="email" name="email" type="email" required autocomplete="email">
+      <label for="subject">נושא</label><input id="subject" name="subject">
+      <label for="message">הודעה *</label><textarea id="message" name="message" required></textarea>
+      <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="_subject" value="פנייה חדשה מאתר אבירם שגב">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">שליחה</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
     </form>
     <div class="contact-copy">
       <p>יש לך תגובה? שאלה?<br>או רק רצית להגיד שלום&nbsp; : )</p>
@@ -118,12 +130,36 @@ function renderContact() {
       <div class="contact-direct"><a href="${phoneLink}">${content.contact.phone}</a><a href="mailto:${content.contact.email}">${content.contact.email}</a></div>
     </div>
   </section>`;
-  main.querySelector("form").addEventListener("submit", (event) => {
+  main.querySelector("form").addEventListener("submit", async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const subject = data.get("subject") || "פנייה מאתר אבירם שגב";
-    const body = `שם: ${data.get("name")}\nאימייל: ${data.get("email")}\n\n${data.get("message") || ""}`;
-    window.location.href = `mailto:${content.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const form = event.currentTarget;
+    const button = form.querySelector("button");
+    const status = form.querySelector(".form-status");
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    button.disabled = true;
+    button.textContent = "שולח...";
+    status.className = "form-status";
+    status.textContent = "";
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${content.contact.email}`, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      if (!response.ok) throw new Error("send failed");
+      form.reset();
+      status.classList.add("is-success");
+      status.textContent = "תודה, ההודעה נשלחה בהצלחה.";
+    } catch {
+      status.classList.add("is-error");
+      status.innerHTML = `לא הצלחנו לשלוח כרגע. אפשר לשלוח ישירות ל־<a href="mailto:${content.contact.email}">${content.contact.email}</a>.`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "שליחה";
+    }
   });
 }
 
