@@ -29,7 +29,7 @@ function html(page, title) {
   <meta http-equiv="Expires" content="0">
   <title>${title}</title>
   <link rel="stylesheet" href="css/style.css?v=20260920h">
-  <script type="module" src="js/site.js?v=20260920h"></script>
+  <script type="module" src="js/site.js?v=20260920i"></script>
 </head>
 <body data-page="${page}">
   <a class="skip-link" href="#content">דילוג לתוכן</a>
