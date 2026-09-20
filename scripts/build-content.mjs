@@ -51,7 +51,7 @@ function pageImages(page) {
 
 const content = {
   brand: {
-    logo: "assets/aviram-segev-logo.png?v=20260920c",
+    logo: "assets/aviram-segev-logo.png?v=20260920d",
   },
   contact: {
     phone: "054-8300575",
@@ -63,8 +63,11 @@ const content = {
     caption: "the visual were created using Leonardo.ai software by Aviram Segav",
   },
   about: {
-    text: cleanText(source.about.text),
-    images: pageImages("about"),
+    text: "שלום, שמי אבירם שגב, מעצב גרפי בעל ידע נרחב בעיבוד תמונה ובקדם־דפוס.\nבעל ניסיון של מעל 20 שנה במשרדי הפרסום מהגדולים במשק. במהלך שנות עבודתי צברתי ידע וניסיון רב בעיצוב וביצוע למגוון פלטפורמות — הן בפרינט והן בדיגיטל.\nבשנת 2009 הקמתי סטודיו עצמאי המתמחה בעיצוב לדפוס ולאינטרנט, לוגואים, מיתוג לעסקים, קטלוגים, אריזות, באנרים, סטנדים לתערוכות ועוד. הסטודיו עובד עם המגזר העסקי והפרטי.\nבנוסף, הסטודיו מספק שירותי פרילנס בעיצוב וביצוע למשרדי פרסום.",
+    images: [{
+      alt: "דיוקן מאויר של אבירם שגב",
+      src: "assets/about-aviram-portrait-2026.jpg",
+    }],
   },
   portfolio: { images: pageImages("portfolio") },
   ai: { images: pageImages("ai") },
