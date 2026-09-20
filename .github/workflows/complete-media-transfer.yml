@@ -49,59 +49,10 @@ jobs:
             'https://video.wixstatic.com/video/7b1559_a81a47b887584d55bde2912bbb2aacbd/720p/mp4/file.mp4' \
             --output assets/videos/herzliya-loves-animals.mp4
 
-      - name: Point the site at local media
+      - name: Apply code changes
         shell: bash
         run: |
-          python3 - <<'PY'
-          import json
-          from pathlib import Path
-
-          content_path = Path("data/site-content.json")
-          content = json.loads(content_path.read_text())
-          content["videos"]["images"][0]["video"] = "assets/videos/vim-power-flyer.mp4"
-          content["videos"]["images"][1]["video"] = "assets/videos/herzliya-loves-animals.mp4"
-          content_path.write_text(json.dumps(content, ensure_ascii=False, indent=2) + "\n")
-
-          build_path = Path("scripts/build-content.mjs")
-          build = build_path.read_text()
-          marker = '];\n\nfunction pageImages(page) {'
-          insert = '''];
-
-const localVideos = [
-  "assets/videos/vim-power-flyer.mp4",
-  "assets/videos/herzliya-loves-animals.mp4",
-];
-
-function pageImages(page) {''']
-          if "const localVideos" not in build:
-              assert marker in build
-              build = build.replace(marker, insert, 1)
-          old = '    images: pageImages("videos"),'
-          new = '''    images: pageImages("videos").map((image, index) => ({
-      ...image,
-      video: localVideos[index] || "",
-    })),'''
-          assert old in build
-          build_path.write_text(build.replace(old, new, 1))
-
-          script_path = Path("js/site.js")
-          script = script_path.read_text()
-          old = '      if (!response.ok) throw new Error("send failed");'
-          new = '''      const result = await response.json();
-      const accepted = result.success === true || result.success === "true";
-      if (!response.ok || !accepted) throw new Error(result.message || "send failed");'''
-          assert old in script
-          script_path.write_text(script.replace(old, new, 1))
-
-          readme_path = Path("README.md")
-          readme = readme_path.read_text()
-          sentence = "כל התמונות ושני הסרטונים באתר שמורים במאגר עצמו, כך שהצגת תיק העבודות אינה תלויה ב-Wix CDN."
-          marker = "\n## עריכת טקסטים ותמונות"
-          if sentence not in readme:
-              assert marker in readme
-              readme = readme.replace(marker, f"\n{sentence}\n{marker}", 1)
-          readme_path.write_text(readme)
-          PY
+          printf '%s' 'ZGlmZiAtLWdpdCBhL1JFQURNRS5tZCBiL1JFQURNRS5tZAppbmRleCA0ODQ3YTE4Li45MDAzNDcyIDEwMDY0NAotLS0gYS9SRUFETUUubWQKKysrIGIvUkVBRE1FLm1kCkBAIC0yMyw2ICsyMyw4IEBAIHB5dGhvbjMgLW0gaHR0cC5zZXJ2ZXIgODA4MAogCiDXlNeY15XXpNehINep15XXnNeXINeQ16og15TXpNeg15nXldeqINec15vXqteV15HXqiBgYXZpcmFtLnNlZ2V2QGdtYWlsLmNvbWAg15HXkNee16bXoteV16ogRm9ybVN1Ym1pdC4g15zXkNeX16gg15TXpNeo16HXldedINeZ16kg15zXkdem16Ig16nXnNeZ15fXqiDXoNeZ16HXmdeV158g15DXl9eqINeV15zXkNep16gg15DXqiDXlNeV15PXoteqINeU15TXpNei15zXlCDXqdee15LXmdei15Qg15zXnteZ15nXnDsg15zXkNeX16gg15TXkNeZ16nXldeoINeb15wg15TXpNeg15nXldeqINeg16nXnNeX15XXqiDXmdep15nXqNeV16og15zXqteZ15HXlC4g16fXmdep15XXqCDXkNeZ157XmdeZ15wg15nXqdeZ16gg16DXqdeQ16gg15bXnteZ158g15vXkteZ15HXldeZLgogCivXm9ecINeU16rXnteV16DXldeqINeV16nXoNeZINeU16HXqNeY15XXoNeZ150g15HXkNeq16gg16nXnteV16jXmdedINeR157XkNeS16gg16LXptee15UsINeb15og16nXlNem15LXqiDXqteZ16cg15TXoteR15XXk9eV16og15DXmdeg15Qg16rXnNeV15nXlCDXkS1XaXggQ0ROLgorCiAjIyDXoteo15nXm9eqINeY16fXodeY15nXnSDXldeq157Xldeg15XXqgogCiDXlNee15DXkteoINeb15XXnNecINen15XXkdelIGAucGFnZXMueW1sYCDXnteV15vXnyDXnC1QYWdlcyBDTVMuINec15DXl9eoINeU16LXnNeQ16og15TXnteQ15LXqCDXnC1HaXRIdWIsINeg15nXqtefINec15TXmdeb16DXoSDXkNecIGBodHRwczovL2FwcC5wYWdlc2Ntcy5vcmdgLCDXnNeR15fXldeoINeQ16og15TXnteQ15LXqCDXldec16LXqNeV15og15DXqiDXqteV15vXnyDXlNeQ16rXqCDXk9eo15og157Xntep16cg15fXlteV16rXmS4g15TXldeo15DXldeqINee15zXkNeV16og16DXntem15DXldeqINeR16fXldeR16UgYEVESVRJTkcubWRgLgpkaWZmIC0tZ2l0IGEvZGF0YS9zaXRlLWNvbnRlbnQuanNvbiBiL2RhdGEvc2l0ZS1jb250ZW50Lmpzb24KaW5kZXggNTIxYWE1Yy4uNjhmZGUzOCAxMDA2NDQKLS0tIGEvZGF0YS9zaXRlLWNvbnRlbnQuanNvbgorKysgYi9kYXRhL3NpdGUtY29udGVudC5qc29uCkBAIC0yOTUsMTIgKzI5NSwxMiBAQAogICAgICAgewogICAgICAgICAiYWx0IjogIlZJTSBQT1dFUiBGTFlFUiIsCiAgICAgICAgICJzcmMiOiAiYXNzZXRzLzdiMTU1OV84ZTY2OTVjMGVlZjk0MjhlODY4OTJjZTQ5NDgzYjAzMmYwMDIuanBnIiwKLSAgICAgICAgInZpZGVvIjogImh0dHBzOi8vdmlkZW8ud2l4c3RhdGljLmNvbS92aWRlby83YjE1NTlfMDI1Y2JkNzk1MTFiNDA1NTg3NDI4MDNjYWZhMzAzZjcvNDgwcC9tcDQvZmlsZS5tcDQiCisgICAgICAgICJ2aWRlbyI6ICJhc3NldHMvdmlkZW9zL3ZpbS1wb3dlci1mbHllci5tcDQiCiAgICAgICB9LAogICAgICAgewogICAgICAgICAiYWx0IjogImRvb2ciLAogICAgICAgICAic3JjIjogImFzc2V0cy83YjE1NTlfODE1MTc4N2EzNjY5NDk5MWEzOTYzYjY3YjMzNmMwNzhmMDAyLmpwZyIsCi0gICAgICAgICJ2aWRlbyI6ICJodHRwczovL3ZpZGVvLndpeHN0YXRpYy5jb20vdmlkZW8vN2IxNTU5X2E4MWE0N2I4ODc1ODRkNTViZGUyOTEyYmJiMmFhY2JkLzQ4MHAvbXA0L2ZpbGUubXA0IgorICAgICAgICAidmlkZW8iOiAiYXNzZXRzL3ZpZGVvcy9oZXJ6bGl5YS1sb3Zlcy1hbmltYWxzLm1wNCIKICAgICAgIH0KICAgICBdCiAgIH0sCmRpZmYgLS1naXQgYS9qcy9zaXRlLmpzIGIvanMvc2l0ZS5qcwppbmRleCA5Y2FlMDA1Li42MWUxMjQzIDEwMDY0NAotLS0gYS9qcy9zaXRlLmpzCisrKyBiL2pzL3NpdGUuanMKQEAgLTE0OSw3ICsxNDksOSBAQCBmdW5jdGlvbiByZW5kZXJDb250YWN0KCkgewogICAgICAgICBoZWFkZXJzOiB7IEFjY2VwdDogImFwcGxpY2F0aW9uL2pzb24iIH0sCiAgICAgICAgIGJvZHk6IG5ldyBGb3JtRGF0YShmb3JtKSwKICAgICAgIH0pOwotICAgICAgaWYgKCFyZXNwb25zZS5vaykgdGhyb3cgbmV3IEVycm9yKCJzZW5kIGZhaWxlZCIpOworICAgICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgcmVzcG9uc2UuanNvbigpOworICAgICAgY29uc3QgYWNjZXB0ZWQgPSByZXN1bHQuc3VjY2VzcyA9PT0gdHJ1ZSB8fCByZXN1bHQuc3VjY2VzcyA9PT0gInRydWUiOworICAgICAgaWYgKCFyZXNwb25zZS5vayB8fCAhYWNjZXB0ZWQpIHRocm93IG5ldyBFcnJvcihyZXN1bHQubWVzc2FnZSB8fCAic2VuZCBmYWlsZWQiKTsKICAgICAgIGZvcm0ucmVzZXQoKTsKICAgICAgIHN0YXR1cy5jbGFzc0xpc3QuYWRkKCJpcy1zdWNjZXNzIik7CiAgICAgICBzdGF0dXMudGV4dENvbnRlbnQgPSAi16rXldeT15QsINeU15TXldeT16LXlCDXoNep15zXl9eUINeR15TXptec15fXlC4iOwpkaWZmIC0tZ2l0IGEvc2NyaXB0cy9idWlsZC1jb250ZW50Lm1qcyBiL3NjcmlwdHMvYnVpbGQtY29udGVudC5tanMKaW5kZXggYzRhN2FkNi4uMTlhMDY5NyAxMDA2NDQKLS0tIGEvc2NyaXB0cy9idWlsZC1jb250ZW50Lm1qcworKysgYi9zY3JpcHRzL2J1aWxkLWNvbnRlbnQubWpzCkBAIC0zNiw2ICszNiwxMSBAQCBjb25zdCBzaGFyZWRJbWFnZUlkcyA9IFsKICAgIjdiMTU1OV85MTIxYTI3YWQyZmU0NTUzYmQzZGI3YzU1YzMxZmEwYiIsCiBdOwogCitjb25zdCBsb2NhbFZpZGVvcyA9IFsKKyAgImFzc2V0cy92aWRlb3MvdmltLXBvd2VyLWZseWVyLm1wNCIsCisgICJhc3NldHMvdmlkZW9zL2hlcnpsaXlhLWxvdmVzLWFuaW1hbHMubXA0IiwKK107CisKIGZ1bmN0aW9uIHBhZ2VJbWFnZXMocGFnZSkgewogICBjb25zdCBzZWVuID0gbmV3IFNldCgpOwogICByZXR1cm4gKHNvdXJjZVtwYWdlXT8uaW1hZ2VzIHx8IFtdKQpAQCAtNjgsNyArNzMsMTAgQEAgY29uc3QgY29udGVudCA9IHsKICAgY2xpZW50czogeyBpbWFnZXM6IHBhZ2VJbWFnZXMoImNsaWVudHMiKSB9LAogICB2aWRlb3M6IHsKICAgICB0ZXh0OiBjbGVhblRleHQoc291cmNlLnZpZGVvcy50ZXh0KSwKLSAgICBpbWFnZXM6IHBhZ2VJbWFnZXMoInZpZGVvcyIpLAorICAgIGltYWdlczogcGFnZUltYWdlcygidmlkZW9zIikubWFwKChpbWFnZSwgaW5kZXgpID0+ICh7CisgICAgICAuLi5pbWFnZSwKKyAgICAgIHZpZGVvOiBsb2NhbFZpZGVvc1tpbmRleF0gfHwgIiIsCisgICAgfSkpLAogICB9LAogICBzcGVjaWFsczogewogICAgIHRleHQ6IGNsZWFuVGV4dChzb3VyY2Uuc3BlY2lhbHMudGV4dCksCg==' | base64 --decode | git apply -
 
       - name: Validate and publish
         shell: bash
