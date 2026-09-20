@@ -119,7 +119,7 @@ function renderPosts() {
         ? { src: "assets/junkyard-yad2-campaign.jpg", alt: "שילוט לקמפיין ג'אנק יארד של יד2" }
         : content.posts.images[index];
       return `<article class="post">
-      <div class="post-media">${image ? `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || post.title)}" loading="lazy">` : ""}</div>
+      <div class="post-media" style="background:#fff">${image ? `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || post.title)}" loading="lazy" style="background:#fff">` : ""}</div>
       <div class="post-copy"><span class="post-number">${String(index + 1).padStart(2, "0")}</span><h2>${escapeHtml(post.title)}</h2>${post.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
     </article>`;
     }).join("")}

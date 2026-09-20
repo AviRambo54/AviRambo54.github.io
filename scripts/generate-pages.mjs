@@ -24,9 +24,12 @@ function html(page, title) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="אבירם שגב — סטודיו לעיצוב גרפי, מיתוג, פרינט ודיגיטל.">
   <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>${title}</title>
-  <link rel="stylesheet" href="css/style.css?v=20260920g">
-  <script type="module" src="js/site.js?v=20260920f"></script>
+  <link rel="stylesheet" href="css/style.css?v=20260920h">
+  <script type="module" src="js/site.js?v=20260920h"></script>
 </head>
 <body data-page="${page}">
   <a class="skip-link" href="#content">דילוג לתוכן</a>
@@ -44,7 +47,7 @@ function html(page, title) {
       <a data-nav="clients" href="clients.html">לקוחות</a>
       <a data-nav="videos" href="videos.html">סרטונים</a>
       <a data-nav="specials" href="specials.html">מיוחדים</a>
-      <a data-nav="posts" href="posts.html">כמה מילים על...</a>
+      <a data-nav="posts" href="posts.html?v=20260920h">כמה מילים על...</a>
       <a data-nav="contact" href="contact.html">צור קשר</a>
     </nav>
   </header>
