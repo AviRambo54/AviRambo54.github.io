@@ -162,12 +162,14 @@ main {
   align-self: center;
   padding-block: clamp(6px, 2vw, 20px);
   background: #fff;
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.85;
   text-align: right;
 }
-.about-copy h1 { margin: 6px 0 24px; font-size: clamp(38px, 5vw, 58px); line-height: 1; font-weight: 600; }
-.about-copy p { max-width: 54ch; margin: 0 0 17px; }
+.about-copy h1 { max-width: 16ch; margin: 8px 0 22px; font-size: clamp(36px, 4.5vw, 54px); line-height: 1.12; font-weight: 600; letter-spacing: -.025em; }
+.about-copy p { max-width: 62ch; margin: 0 0 18px; }
+.about-copy .about-lead { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line); color: #252525; font-size: clamp(19px, 2vw, 22px); line-height: 1.65; font-weight: 500; }
+.about-copy .about-closing { margin-top: 26px; padding: 2px 18px 2px 0; border-right: 3px solid var(--blue); color: #252525; font-weight: 600; }
 .about-copy p:last-child { margin-bottom: 0; }
 .eyebrow { color: var(--blue); font-size: 14px; font-weight: 700; letter-spacing: 2px; }
 .about-photo { align-self: center; overflow: hidden; background: #f4f2ee; box-shadow: 0 18px 42px rgba(23, 23, 23, .12); }
@@ -373,8 +375,9 @@ main {
   .special-project + .special-project { padding-top: 42px; }
   .special-copy { font-size: 13px; }
   .about { margin-inline: 10px; padding: 24px 20px; }
-  .about-copy { font-size: 17px; line-height: 1.75; }
-  .about-copy h1 { margin-bottom: 20px; }
+  .about-copy { font-size: 16px; line-height: 1.8; }
+  .about-copy h1 { max-width: none; margin-bottom: 18px; font-size: 34px; }
+  .about-copy .about-lead { margin-bottom: 20px; padding-bottom: 20px; font-size: 18px; }
   .posts { padding-inline: 18px; }
   .site-footer { font-size: 12px; }
 }

@@ -1,4 +1,4 @@
-const content = await fetch("data/site-content.json?v=20260920f", { cache: "no-store" }).then((response) => {
+const content = await fetch("data/site-content.json?v=20260921a", { cache: "no-store" }).then((response) => {
   if (!response.ok) throw new Error("לא ניתן לטעון את תוכן האתר");
   return response.json();
 });
@@ -50,9 +50,15 @@ function renderHome() {
 }
 
 function renderAbout() {
+  const [title, lead, ...body] = paragraphs(content.about.text);
   main.innerHTML = `<section class="about">
     <div class="about-photo"><img src="${content.about.images[0].src}" alt="${escapeHtml(content.about.images[0].alt)}"></div>
-    <div class="about-copy"><span class="eyebrow">נעים להכיר</span><h1>אבירם שגב</h1>${paragraphs(content.about.text).map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
+    <div class="about-copy">
+      <span class="eyebrow">אודות</span>
+      <h1>${escapeHtml(title)}</h1>
+      <p class="about-lead">${escapeHtml(lead)}</p>
+      ${body.map((p, index) => `<p${index === body.length - 1 ? ' class="about-closing"' : ""}>${escapeHtml(p)}</p>`).join("")}
+    </div>
   </section>`;
 }
 
